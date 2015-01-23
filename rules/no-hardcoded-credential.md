@@ -21,14 +21,14 @@ ftp_login($conn_id, $ftp_user, $ftp_pass);
 
 In this example, `$ftp_server`, `$ftp_user` and `$ftp_pass` are all pieces of information that should be stored outside the application and not hardcoded in the script itself. 
 
-More often than not, host, login and password are hardcoded during testing phase, and a few of them stay put until production. Not only such information have to be handled by sysadmins, but they may simply change without notice. 
+More often than not, host, login and password are hardcoded during testing phase, and a few of them stay put until production. Not only does such information have to be handled by sysadmins, but they may simply change without notice. 
 
-There are solutions to put credential outside the PHP code : 
+There are several places to put credentials outside the PHP code : 
 * php.ini file, which may host some default access, such as mysqli default credentials.
 * Application configuration file, in XML, INI, YAML, JSON, ... Such files shouldn't be committed with those values to the repository.
 * Use environment variables, set at the system level, the web server, or some external configuration file (see PHP dotenv)
 
-It is recommended to check that functions that require credentials are not using hardcoded data. 
+It is recommended to make sure that any functions that require credentials are not using hardcoded data. 
 
 ## Rule Details
 
